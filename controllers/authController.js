@@ -55,14 +55,14 @@ const login = async (req,res) => {
             success:true,
             message:"Login Succes",
             token,
-            data:user
-        })
+            data:user        })
     }
     catch(err){
+        console.log(err);
         res.status(500).json({
             success:false,
             message:"Unable to Login",
-            error:err
+            error:err.message
         });
     }
 };
