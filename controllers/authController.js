@@ -49,7 +49,7 @@ const login = async (req,res) => {
         }
         const token = jwt.sign({
             id:user._id
-        },process.env.SECRET_KEY,{expiresIn:"1d"})
+        },process.env.SECRET_KEY,{expiresIn:"5m"})
 
         res.json({
             success:true,
@@ -75,6 +75,11 @@ const profile = (req,res) => {
     })
 };
 
-const logout = () =>{};
+const logout = (req,res) =>{
+    res.json({
+        success:true,
+        message:"Please delete token"
+    })
+};
 
 module.exports = {register, login, profile, logout};
