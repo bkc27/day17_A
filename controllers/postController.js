@@ -156,7 +156,7 @@ const deletePost = async (req, res) => {
             });
         }
 
-        await post.delete();
+        await Post.findByIdAndDelete(id);
 
         res.status(200).json({
             success:true,
