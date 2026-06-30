@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 require("dotenv").config();
 
 const authRoutes = require("./routes/authRoutes");
+const postRoutes = require("./routes/postRoutes");
 
 const app = express();
 app.use(express.json());
@@ -12,6 +13,7 @@ mongoose.connect(process.env.MONGODB_URI)
 .catch((err)=>{console.log("Unable to connect DB ",err)});
 
 app.use("/api/auth",authRoutes);
+app.use("/api/posts",postRoutes);
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT,()=>{

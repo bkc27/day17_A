@@ -93,6 +93,9 @@ const getSinglePost = async (req, res) => {
 
 
 
+module.exports = {createPost, getAllPost, getMyPost, getSinglePost};
+
+
 // get - all post
 // get - my post
 // put - update post
